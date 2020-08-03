@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Carrito_de_compras.Models.Detalle>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Detalle</h1>
+<br />
+<p>
+    <a asp-action="Create" class="btn btn-primary">Crear </a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DetalleCantidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DetallePrecio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Factura)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Producto)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DetalleCantidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DetallePrecio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Factura.FacturaId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Producto.ProductosNombre)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.DetalleId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.DetalleId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.DetalleId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
