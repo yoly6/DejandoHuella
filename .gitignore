@@ -30,7 +30,9 @@
 *.pidb
 *.svclog
 *.scc
-
+.ionide
+.bin
+.obj
 
 # Precompiled Headers
 *.gch
