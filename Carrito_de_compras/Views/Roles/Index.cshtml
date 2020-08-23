@@ -18,8 +18,8 @@
         <tr>
             <td>@rol.Id</td>
             <td>@rol.Name</td>
-            <td i-rol></td>
-            <td><a class="btn btn-primary" asp-action="Update" asp-route-id="@rol.Id">Actualizar</a></td>
+            <td i-role="@rol.Id"></td>
+            <td><a asp-action="Update" asp-route-id="@rol.Id" class="btn btn-primary">Actualizar</a></td>
             <td>
                 <form asp-action="Delete" method="post" asp-route-id="@rol.Id">
                     <input type="submit" value="Borrar" class="btn btn-danger" />

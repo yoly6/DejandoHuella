@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 
 namespace Carrito_de_compras.Controllers
-    {
-    [Authorize/*(Roles = "Administrador")*/]
+   {
+    [Authorize]
     public class RolesController : Controller
     {
-        //Encapsular los atribulos
+        
         private RoleManager<IdentityRole> roleManager;
         private UserManager<IdentityUser> userManager;
 
@@ -53,7 +53,7 @@ namespace Carrito_de_compras.Controllers
 
             if (rolPorBorrar != null)
             {
-                // (resulatado) existe solo dentro del (if)
+               
                 IdentityResult resultado = await roleManager.DeleteAsync(rolPorBorrar);
 
                 if (resultado.Succeeded)
@@ -74,7 +74,7 @@ namespace Carrito_de_compras.Controllers
 
             foreach (IdentityUser usuario in userManager.Users)
             {
-                //  (?) simlilar a un (if) = cumple uno u otra cosa
+               
                 var lista = await userManager.IsInRoleAsync(usuario, rol.Name) ? miembros : noMiembros;
                 lista.Add(usuario);
             }
@@ -82,7 +82,7 @@ namespace Carrito_de_compras.Controllers
             {
                 Rol = rol,
                 miembros = miembros,
-                noMiembros = noMiembros
+                noMiembros = noMiembros,
             };
             return View(modelo);
 

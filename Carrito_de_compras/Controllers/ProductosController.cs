@@ -74,7 +74,7 @@ namespace Carrito_de_compras.Controllers
                 //Guarda el nombre de imagen que se le da
                 producto.ImageName = fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
 
-                string path = Path.Combine(wwwRootPath + "/Producto", fileName);
+                string path = Path.Combine(wwwRootPath + "/Image", fileName);
                 using (var fileStream = new FileStream(path, FileMode.Create))
                 {
                     await producto.ImageFile.CopyToAsync(fileStream);
@@ -165,7 +165,7 @@ namespace Carrito_de_compras.Controllers
         {
             var producto = await _context.Producto.FindAsync(id);
 
-            var imagePath = Path.Combine(_hostEnvironment.WebRootPath, "producto", producto.ImageName);
+            var imagePath = Path.Combine(_hostEnvironment.WebRootPath, "Image", producto.ImageName);
             if (System.IO.File.Exists(imagePath))
                 System.IO.File.Delete(imagePath);
 

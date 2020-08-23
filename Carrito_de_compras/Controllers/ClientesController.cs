@@ -65,9 +65,8 @@ namespace Carrito_de_compras.Controllers
                 string fileName = Path.GetFileNameWithoutExtension(cliente.ImageFile.FileName);
                 string extension = Path.GetExtension(cliente.ImageFile.FileName);
 
-                //Guarda la imagen con el nombre puesto.
+                //Guarda la imagen en la carpeta creada Imagen.
                 cliente.ImageName= fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
-
                 string path = Path.Combine(wwwRootPath + "/Image", fileName);
                 using (var fileStream = new FileStream(path, FileMode.Create))
                 {
@@ -156,7 +155,7 @@ namespace Carrito_de_compras.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var cliente = await _context.Cliente.FindAsync(id);
-            var imagePath = Path.Combine(_hostEnvironment.WebRootPath, "image", cliente.ImageName);
+            var imagePath = Path.Combine(_hostEnvironment.WebRootPath, "Image", cliente.ImageName);
             if (System.IO.File.Exists(imagePath))
                 System.IO.File.Delete(imagePath);
 

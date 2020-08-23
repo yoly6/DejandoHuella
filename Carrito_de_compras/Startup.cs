@@ -42,8 +42,8 @@ namespace Carrito_de_compras
             // requires
             // using Microsoft.AspNetCore.Identity.UI.Services;
             // using WebPWrecover.Services;
-           services.AddTransient<IEmailSender, EmailSender>();
-            services.Configure<AuthMessageSenderOptions>(Configuration);
+         //  services.AddTransient<IEmailSender, EmailSender>();
+       //     services.Configure<AuthMessageSenderOptions>(Configuration);
 
             //servicio de facebook
             /* services.AddAuthentication().AddFacebook(facebookOptions =>

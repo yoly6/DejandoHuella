@@ -10,7 +10,7 @@ namespace Carrito_de_compras.Models
         [DisplayName("Id Rol")]
         public string RoleId { get; set; }
 
-        [DisplayName("Agregar rRol")]
+        [DisplayName("Agregar Rol")]
         public string[] AumentarIds { get; set; }
 
         [DisplayName("Eliminar Rol")]

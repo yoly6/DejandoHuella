@@ -18,9 +18,6 @@ namespace Carrito_de_compras.Data
 
     public DbSet<Producto> Producto { get; set; }
 
-    public DbSet<Pago> Pago { get; set; }
-
-    public DbSet<ModoPago> ModoPago { get; set; }
     public DbSet<Detalle> Detalle { get; set; }
 }
 }

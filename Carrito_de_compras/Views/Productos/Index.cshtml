@@ -43,15 +43,15 @@
                 @Html.DisplayFor(modelItem => item.ProductosStock)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ImageName)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Categoria.CategoriaNombre)
             </td>
+            <td class="mx-auto">
+                <img src="@("/Image/" + item.ImageName)" asp-append-version="true" class="w-25 h-25" />
+            </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ProductosId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ProductosId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProductosId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.ProductosId" class="btn btn-outline-primary" >Edit</a> 
+                <a asp-action="Details" asp-route-id="@item.ProductosId" class="btn btn-outline-primary" >Details</a> 
+                <a asp-action="Delete" asp-route-id="@item.ProductosId" class="btn btn-outline-danger" >Delete</a>
             </td>
         </tr>
 }

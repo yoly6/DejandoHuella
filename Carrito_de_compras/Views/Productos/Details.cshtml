@@ -29,16 +29,16 @@
             @Html.DisplayFor(model => model.ProductosStock)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ImageName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ImageName)
-        </dd>
-        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Categoria)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Categoria.CategoriaNombre)
+        </dd>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ImageName)
+        </dd>
+        <dd class="col-sm-10">
+            <img src="@("~/image/"+Model.ImageName)" asp-append-version="true" width="250px" height="250px"/>
         </dd>
     </dl>
 </div>

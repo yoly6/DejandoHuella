@@ -12,7 +12,7 @@ namespace Carrito_de_compras.Models
         public Cliente()
         { 
             Factura = new HashSet<Factura>();
-            Pago = new HashSet<Pago>();
+           
          }
     //Propidades
     [Key]
@@ -43,12 +43,6 @@ namespace Carrito_de_compras.Models
     public string ClienteTelefono { get; set; }
 
    
-
-    //Relacion Foreing Keys
-    public virtual ICollection<Factura> Factura { get; set; }
-
-    public virtual ICollection<Pago> Pago { get; set; }
-
     [NotMapped]
     [DisplayName("Subir Imagen")]
     public IFormFile ImageFile { get; set; }
@@ -56,6 +50,9 @@ namespace Carrito_de_compras.Models
     [Column(TypeName = "nvarchar(100)")]
     [DisplayName("Fotografia")]
     public string ImageName { get; set; }
+
+    //Relacion Foreing Keys
+    public virtual ICollection<Factura> Factura { get; set; }
 
     }
 }

@@ -26,7 +26,7 @@ namespace Carrito_de_compras.Services
             var msg = new SendGridMessage()
             {
                 // Ingresar el email con el que registro la cuenta de SendGrid.
-                From = new EmailAddress("ymp.perez@gmail.com", Options.SendGridUser),
+                From = new EmailAddress("ymp.perez@yavirac.edu.ec", Options.SendGridUser),
                 Subject = subject,
                 PlainTextContent = message,
                 HtmlContent = message

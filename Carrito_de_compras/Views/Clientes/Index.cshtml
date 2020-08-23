@@ -57,8 +57,8 @@
             <td>
                 @Html.DisplayFor(modelItem => item.ClienteTelefono)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ImageName)
+            <td class="mx-auto">
+                <img src="@("/Image/" + item.ImageName)" asp-append-version="true" class="w-25 h-25" />
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ClienteId">Edit</a> |
